@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.joseph.designPatterns.test;
+package com.joseph.designPatterns.test.creational;
 
 import com.joseph.designpatterns.creational.singletonP.Singleton;
 import org.testng.Assert;
