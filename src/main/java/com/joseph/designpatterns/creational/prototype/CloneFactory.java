@@ -10,7 +10,10 @@ package com.joseph.designpatterns.creational.prototype;
  *
  * @author Common Sense
  */
-public interface PrototypeInterface 
-{
-        public PrototypeInterface doClone();
+public class CloneFactory {
+    
+    public Animal getClone(Animal animal)
+    {
+        return animal.makeCopy();
+    }
 }

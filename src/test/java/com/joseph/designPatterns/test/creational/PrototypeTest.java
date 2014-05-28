@@ -6,8 +6,8 @@
 
 package com.joseph.designPatterns.test.creational;
 
-import com.joseph.designpatterns.creational.factory.Dog;
-import com.joseph.designpatterns.creational.prototype.Person;
+import com.joseph.designpatterns.creational.prototype.CloneFactory;
+import com.joseph.designpatterns.creational.prototype.Sheep;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -30,10 +30,12 @@ public class PrototypeTest {
      @Test
      public void test() 
      {
+         CloneFactory animalMaker = new CloneFactory();
          
-	Dog dog1 = new Dog("Wooof!");
-        Dog dog2 = (Dog) dog1.doClone();
-        Assert.assertEquals(dog2.toString(), "This dog says Wooof!");
+         Sheep sally = new Sheep();
+         Sheep cloned = (Sheep) animalMaker.getClone(sally);
+         
+         Assert.assertNotEquals(System.identityHashCode(sally), System.identityHashCode(cloned));
      }
 
     @BeforeClass
